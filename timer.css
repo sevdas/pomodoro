@@ -15,8 +15,20 @@
 
 .counter {
   background-color: #eb3b5a;
-  display: flex;
+  display: grid;
   justify-content: space-around;
+  text-align: center;
+  grid-template-columns: 1fr 1fr;
+}
+
+.round,
+.goal {
+  display: grid;
+  margin: 1rem;
+  font-size: 16px;
+  font-weight: lighter;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
 }
 
 .buttons {
