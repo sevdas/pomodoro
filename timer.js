@@ -14,8 +14,8 @@ let minutes
 let seconds
 
 
-
-/* FOCUS ----------------------------------------------------------------------------------------------------------- */
+'use strict'
+/* FOCUS EVENT ---------------------------------------------------------------------------------------------------------- */
 function startFocus(){
 
     //Reset
@@ -86,7 +86,7 @@ const updateCount = () => {
 
 
 
-/* SHORT BREAK -------------------------------------------------------------------------------------------------------------- */
+/* SHORT BREAK EVENT -------------------------------------------------------------------------------------------------------------- */
 function shortBreak(){
     //Reset
     clearIntervals()
@@ -145,7 +145,7 @@ function shortBreak(){
 
 
 
-/* LONG BREAK -------------------------------------------------------------------------------------------------------------- */
+/* LONG BREAK EVENT -------------------------------------------------------------------------------------------------------------- */
 function longBreak(){
 
    //Reset
@@ -196,7 +196,7 @@ function longBreak(){
     longBreakButton.addEventListener('click', longBreak)
 
 
-    /* RESET -------------------------------------------------------------------------------------------------------------- */
+    /* RESET EVENT -------------------------------------------------------------------------------------------------------------- */
     function resetTimer(){
         minutes = '00'
         seconds = '00'
@@ -209,7 +209,6 @@ function longBreak(){
         clearInterval(minutesInterval)
         clearInterval(secondsInterval)    
     }
-
     resetButton.addEventListener('click', resetTimer)
 
     function clickPrimaryButton(e){
