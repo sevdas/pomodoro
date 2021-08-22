@@ -3,6 +3,8 @@ const focusButton = document.querySelector(".focus");
 const shortBreakButton = document.querySelector(".break-short");
 const longBreakButton = document.querySelector(".break-long");
 const resetButton = document.querySelector(".reset");
+const animation = document.getElementById("circle");
+document.getElementById("circle-stroke").classList.add("circle-stroke");
 
 //Global Variables
 let sound = new Audio("birds-voice.mp3");
@@ -22,8 +24,7 @@ let counter = 25;
 function startFocus() {
   //Reset
   clearIntervals();
-  document.getElementById("circle").classList.add("circle");
-  document.getElementById("circle-stroke").classList.add("circle-stroke");
+  resetAnimation();
 
   minutes = "24";
   seconds = "59";
@@ -35,6 +36,8 @@ function startFocus() {
     60000
   ); /* 1minute is equal to 60000 milliseconds */
   secondsInterval = setInterval(secondsTimer, 1000);
+
+  animation.classList.add("circle__focus");
 
   //Reset the display message
   document.querySelector(".message").textContent = "";
@@ -94,6 +97,7 @@ const updateCount = () => {
 function shortBreak() {
   //Reset
   clearIntervals();
+  resetAnimation();
 
   minutes = "05";
   seconds = "59";
@@ -109,11 +113,13 @@ function shortBreak() {
   ); /* 1minute is equal to 60000 milliseconds */
   secondsInterval = setInterval(secondsTimer, 1000);
 
+  animation.classList.add("circle__shortBreak");
+
   //Reset the display message
   document.querySelector(".message").textContent = "";
   document
     .querySelector(".message")
-    .classList.remove("show-message"); /*to make an element visible*/
+    .classList.remove("show-message"); /* to make an element visible */
 
   //    Minutes timer when user clicks on 'SHORT BREAK' button
   function minutesTimer() {
@@ -159,11 +165,15 @@ shortBreakButton.addEventListener("click", shortBreak);
 function longBreak() {
   //Reset
   clearIntervals();
+  resetAnimation();
 
   minutes = "15";
   seconds = "59";
   document.querySelector(".minutes").textContent = minutes;
   document.querySelector(".seconds").textContent = seconds;
+
+  if (minutes === "15") {
+  }
 
   minutes = ("0" + (minutes - 1)).slice(-2);
   document.querySelector(".minutes").textContent = minutes;
@@ -173,6 +183,8 @@ function longBreak() {
     60000
   ); /* 1minute is equal to 60000 milliseconds */
   secondsInterval = setInterval(secondsTimer, 1000);
+
+  animation.classList.add("circle__longBreak");
 
   //Reset the display message
   document.querySelector(".message").textContent = "";
@@ -214,9 +226,9 @@ function resetTimer() {
   minutes = "00";
   seconds = "00";
   clearIntervals();
+  resetAnimation();
   document.querySelector(".minutes").textContent = minutes;
   document.querySelector(".seconds").textContent = seconds;
-  document.getElementById("circle").classList.remove("circle");
 }
 
 function clearIntervals() {
@@ -228,6 +240,12 @@ resetButton.addEventListener("click", resetTimer);
 function clickPrimaryButton(e) {
   let target = e.target;
   console.log("you clicked the secondary button");
+}
+
+function resetAnimation() {
+  animation.classList.remove("circle__focus");
+  animation.classList.remove("circle__shortBreak");
+  animation.classList.remove("circle__longBreak");
 }
 
 //to do:

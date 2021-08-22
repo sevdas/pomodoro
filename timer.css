@@ -91,18 +91,32 @@ button:focus {
 
 .circle-stroke {
   fill: none;
-  stroke: hsl(0, 0%, 70%);
+  stroke: hsla(203, 70%, 82%, 0.2);
   stroke-width: 3;
   stroke-dasharray: 0;
   stroke-dashoffset: 0; /* to animate the circle */
   stroke-linecap: square;
 }
 
-.circle {
-  stroke-dasharray: 250;
-  stroke-dashoffset: 250; /* to animate the circle */
-  stroke-linecap: square;
-  animation: fades 150s linear forwards;
+.circle__focus {
+  stroke-dasharray: 248;
+  stroke-dashoffset: 248; /* to animate the circle */
+  stroke-linecap: round;
+  animation: fades 1475.4s linear forwards;
+}
+
+.circle__shortBreak {
+  stroke-dasharray: 248;
+  stroke-dashoffset: 248; /* to animate the circle */
+  stroke-linecap: round;
+  animation: fades 275.4s linear forwards;
+}
+
+.circle__longBreak {
+  stroke-dasharray: 248;
+  stroke-dashoffset: 248; /* to animate the circle */
+  stroke-linecap: round;
+  animation: fades 875.4s linear forwards;
 }
 
 .timer .spinner .timer__time {
