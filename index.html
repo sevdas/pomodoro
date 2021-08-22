@@ -12,10 +12,25 @@
       <section class="timer">
         <header class="spinner">
           <svg viewBox="0 0 100 100">
-            <circle cx="50" cy="50" r="40" />
+            <circle
+              id="circle-stroke"
+              class="circle-load"
+              cx="50"
+              cy="50"
+              r="40"
+            />
+            <circle
+              id="circle"
+              fill="none"
+              stroke="#eb3b5a"
+              stroke-width="3"
+              cx="50"
+              cy="50"
+              r="40"
+            />
           </svg>
           <aside class="timer__time">
-            <p>
+            <p id="time">
               <span class="minutes">25</span>
               <span class="colon">:</span>
               <span class="seconds">00</span>

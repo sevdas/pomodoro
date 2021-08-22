@@ -14,7 +14,7 @@
 }
 
 .counter {
-  background-color: #eb3b5a;
+  background-color: hsl(349, 81%, 58%);
   display: grid;
   justify-content: space-around;
   text-align: center;
@@ -85,14 +85,24 @@ button:focus {
   height: 300px;
 }
 
-circle {
+.circle-load {
   fill: none;
+}
+
+.circle-stroke {
+  fill: none;
+  stroke: hsl(0, 0%, 70%);
   stroke-width: 3;
-  stroke: #eb3b5a;
+  stroke-dasharray: 0;
+  stroke-dashoffset: 0; /* to animate the circle */
+  stroke-linecap: square;
+}
+
+.circle {
   stroke-dasharray: 250;
   stroke-dashoffset: 250; /* to animate the circle */
   stroke-linecap: square;
-  animation: fades 2s linear forwards;
+  animation: fades 150s linear forwards;
 }
 
 .timer .spinner .timer__time {
@@ -148,7 +158,7 @@ h2 {
 }
 
 @keyframes fades {
-  100% {
+  0% {
     stroke-dashoffset: 0;
   }
 }

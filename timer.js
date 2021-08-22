@@ -13,11 +13,17 @@ let secondsInterval;
 let minutes;
 let seconds;
 
-("use strict");
+/* TIMER ---------------------------------------------------------------------------------------------------------- */
+let timer = document.getElementById("time");
+let counter = 25;
+
+// ("use strict");
 /* FOCUS EVENT ---------------------------------------------------------------------------------------------------------- */
 function startFocus() {
   //Reset
   clearIntervals();
+  document.getElementById("circle").classList.add("circle");
+  document.getElementById("circle-stroke").classList.add("circle-stroke");
 
   minutes = "24";
   seconds = "59";
@@ -45,7 +51,7 @@ function startFocus() {
     seconds = ("0" + (seconds - 1)).slice(-2);
     document.querySelector(".seconds").textContent = seconds;
 
-    /*to prevent infinity*/
+    /* to prevent infinity */
     if (seconds <= 0) {
       if (minutes <= 0) {
         /* stop interval */
@@ -210,6 +216,7 @@ function resetTimer() {
   clearIntervals();
   document.querySelector(".minutes").textContent = minutes;
   document.querySelector(".seconds").textContent = seconds;
+  document.getElementById("circle").classList.remove("circle");
 }
 
 function clearIntervals() {
@@ -220,7 +227,6 @@ resetButton.addEventListener("click", resetTimer);
 
 function clickPrimaryButton(e) {
   let target = e.target;
-  console.log(target);
   console.log("you clicked the secondary button");
 }
 
