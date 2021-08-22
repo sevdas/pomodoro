@@ -2,7 +2,7 @@
 
 This week we are building Pomodoro which is a time management technique made out of spaced repetition system. Do the work, take a break.
 
-Click [here](https://sevdas.github.io/pomodoro-timer/) to get started!
+## Click [here](https://sevdas.github.io/pomodoro-timer/) to get started!
 
 Every 3 repetitions will create a set. After each set we will take a long break.
 We will also set a daily goal of 12 repetitions to hit the maximum productivity level!
