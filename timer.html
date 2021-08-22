@@ -10,10 +10,17 @@
   <body>
     <main class="pomodoro">
       <section class="timer">
-        <header class="time">
-          <span class="minutes">25</span>
-          <span class="colon">:</span>
-          <span class="seconds">00</span>
+        <header class="spinner">
+          <svg viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="40" />
+          </svg>
+          <aside class="timer__time">
+            <p>
+              <span class="minutes">25</span>
+              <span class="colon">:</span>
+              <span class="seconds">00</span>
+            </p>
+          </aside>
         </header>
         <aside>
           <p class="message"></p>
@@ -26,16 +33,16 @@
         </aside>
       </section>
       <section class="counter">
-        <artickle class="round">
+        <article class="round">
           <h1>ROUND</h1>
           <aside class="target" data-target="12">0</aside>
-        </artickle>
+        </article>
         <aside class="vertical"></aside>
-        <artickle class="goal">
+        <article class="goal">
           <h2>GOAL</h2>
           <p class="target">12</p>
           <!-- <aside class="target" data-target="12">12</aside> -->
-        </artickle>
+        </article>
       </section>
     </main>
     <script src="timer.js"></script>
